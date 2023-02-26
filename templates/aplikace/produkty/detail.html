@@ -1,0 +1,30 @@
+{% extends "aplikace/base.html" %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+{% endblock %}
+{% block title %} {{produkt.nazev_produktu}} {% endblock %}
+{%block content%}
+
+<div class="detail">
+    <div class="img">
+        <img src="{{produkt.obrazek.url}}" alt="aa">
+    </div>
+    <div class="details">
+        <div class="name-details">   
+            <span id="name">{{produkt.nazev_produktu}}</span>
+            <span id="detail">{{produkt.dlouhy_popis}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sint nesciunt officiis similique vel tenetur mollitia debitis minus dolor dolores rem aperiam, quas aut reprehenderit, explicabo neque quisquam. Quisquam, sint.</span>
+        </div>
+        <div class="split">
+            <span id="kusu">Počet kusů: {{produkt.pocet_kusu}}</span>
+            <span id="size">Velikost: {{produkt.velikost}}</span>
+            <span id="color">Barva: {{produkt.barva}}</span>
+        </div>
+        <div class="price-button">
+            <span id="price">{{produkt.cena}} Kč</span>
+            <button id="add-to-basket" onclick="">Přidat</button>
+        </div>
+        
+    </div>
+</div>
+{%endblock%}

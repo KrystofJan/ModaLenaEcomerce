@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Moda Lena {% endblock %}</title>
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% block styles %}{% endblock %}
+    <script src="{% static 'js/main.js'%}"></script>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <header>
+    <div id="navbar">
+        <div class="align-left">
+            <a href="{% url 'store:index'%}">Home</a>
+            <a href="{% url 'store:vsechny_produkty'%}">Store</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="align-center">
+            <a href="{% url 'store:index'%}" class="logo">MódaLena</span></a>
+        </div>  
+        <div class="align-right">
+            <a href=""><span class="material-symbols-outlined">search</span></a> 
+            <a href=""><span class="material-symbols-outlined">person</span></a> 
+            <a href=""><span class="material-symbols-outlined">shopping_cart</span></a> 
+        </div>   
+    </div>
+    <div id="hamburger-navbar">
+        
+        <div class="align-left">
+            <a href="#" class="logo">MódaLena</span></a>
+        </div> 
+        <div class="align-right">
+            <a class="material-symbols-outlined"  onclick="showHiddenMenu()">menu</a> 
+        </div> 
+        <div id="hamburger-contents" class="hidden-navbar">
+            <div class="align-row">
+                <a href="#"><span class="material-symbols-outlined">search</span></a> 
+                <a href="#"><span class="material-symbols-outlined">person</span></a> 
+                <a href="#"><span class="material-symbols-outlined">shopping_cart</span></a>
+             </div>
+            <a href="{% url 'store:index'%}">Home</a>
+            <a href="{% url 'store:vsechny_produkty'%}">Store</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div> 
+        </div>   
+    </div>
+    </script>
+    </header>
+    <div id="content">{% block content %}{% endblock %}</div>
+
+    <footer>
+        <div class="custom-shape-divider-top-1676895452">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div id="footer-content">
+            <h1>My cool Ecommerce site for Ms. Nešetřilová</h1>
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, optio nobis ex voluptates repudiandae hic cupiditate labore omnis sapiente modi, at facere! Totam culpa quo, velit eius assumenda ipsa quas.</span><span>Mollitia facere iste est deserunt quam a eaque perspiciatis ipsum reprehenderit, omnis commodi molestias distinctio veritatis reiciendis, dolorum odio totam rem eius ea ullam expedita error. Sapiente eligendi perspiciatis fugit?</span><span>Earum voluptas veritatis accusantium, veniam id possimus sunt incidunt reiciendis repellat ea nesciunt consequatur facilis inventore quasi voluptate ducimus similique, aliquam ipsa excepturi soluta sapiente delectus sit. Aliquam, delectus dolore!</span><span>Totam obcaecati quia veniam minima facilis itaque impedit! Nesciunt eveniet ipsa perferendis vero rem ullam delectus, possimus ad consequatur reprehenderit odit, mollitia nemo veritatis numquam. Voluptatibus, eum minus. Ex, sunt.</span><span>Vero dolores illo qui cum dolore expedita nam eum veritatis perferendis itaque quasi ex modi laudantium ullam animi, dicta blanditiis delectus? Vel et, sed odio earum reiciendis nulla praesentium obcaecati.</span></p>
+        </div>
+    </footer>
+</body>
+</html>

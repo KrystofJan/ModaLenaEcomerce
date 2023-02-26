@@ -1,0 +1,22 @@
+{% extends "aplikace/base.html" %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/store.css' %}">
+{% endblock %}
+
+{% block title %} Seznam Produktu {% endblock %}
+{%block content%}
+<section class="grid">
+    {% for produkt in produkty %}
+    <div class="card">
+            <a href="{{produkt.get_absolute_url}}" id="odkaz">
+                <img src="{{produkt.obrazek.url}}" alt="Product Picture" id="produkt-obrazek" class="card-item">
+                <span class="card-item" id="produkt-nazev">{{produkt.nazev_produktu}}</span>
+                <span class="card-item" id="produkt-popis">{{produkt.kratky_popis}}</span>
+                <span class="card-item" id="cena">{{produkt.cena}} Kč</span>
+           </a>
+    </div>
+    {% endfor %}
+</section>
+
+{%endblock%}

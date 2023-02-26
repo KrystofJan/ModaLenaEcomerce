@@ -1,0 +1,12 @@
+:root{
+    font-size:16px;
+    --bg-primary:#300000;
+    --bg-secondary:#400000;;
+    --text-primary:#ffffff;
+    --text-secondary:#000;
+    --menu-text-hover:#F00;
+    --scrollbar-thumb-color:#F00;
+    --content-color:#353535;
+    --content-text-color:#FFF;
+    --bg-cards:#fff;
+}

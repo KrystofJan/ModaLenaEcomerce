@@ -1,0 +1,44 @@
+@import url(variables.css);
+
+.card{
+    background: var(--bg-cards);
+    border-radius: 4px;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--text-secondary);
+}
+.card span{
+    color: var(--text-secondary);
+}
+.card{
+    transition: all 500ms;
+}
+.card:hover{
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175EM, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: scale(1.01);
+}
+  
+.grid{
+    display:grid;
+    gap:1rem;
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+}
+#odkaz{
+    padding:0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-item{
+    padding-top: 0.12rem;
+    padding-bottom: 0.12rem;
+}
+#produkt-nazev{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+#produkt-popis{
+    font-size: 0.75REM;
+}
