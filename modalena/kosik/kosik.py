@@ -8,11 +8,28 @@ class Kosik():
         if 'skey' not in request.session:
             kosik = self.session['skey'] = {}
         self.kosik = kosik
+        #self.item_count = 0
+        #self.cena = 0
 
     def add(self,product):
         product_id = product.produkt_id
-
-        if product_id not in self.kosik:
-            self.kosik[product_id] = {'cena': product.cena}
-        
+        if str(product_id) not in self.kosik:
+            self.kosik[str(product_id)] = {'cena': float(product.cena),'pocet': 1}
+        else:
+            self.kosik[str(product_id)]['pocet'] += 1
         self.session.modified = True
+        #self.item_count += 1
+        #self.count_total_price()
+
+    def __len__(self):
+        pocet = 0
+        for k in self.kosik.keys():
+            pocet += int(self.kosik[k]['pocet'])
+        return pocet
+
+    def count_total_price(self):
+        price = 0
+        for k in self.kosik.keys():
+            price += self.kosik[k]['cena'] * self.kosik[k]['pocet']
+        return float(price)
+

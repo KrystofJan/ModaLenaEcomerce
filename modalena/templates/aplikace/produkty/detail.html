@@ -22,14 +22,14 @@
         </div>
         <div class="price-button">
             <span id="price">{{produkt.cena}} Kč</span>
-            <button id="add-to-basket" value="{{proukt.produkt_id}}">Přidat</button>
+            <button type="button" id="add-to-basket" value="{{produkt.produkt_id}}">Přidat</button>
         </div>
     </div>
 </div>
 
 <script>
     
-    $(document).on('click','#add-to-basket', function(e){
+   $(document).on('click','#add-to-basket', function(e){
         e.preventDefault();
         $.ajax({
             type: 'POST',
@@ -40,11 +40,12 @@
                 action: 'post'
             },
             success: function(json){
-                
+                document.getElementById("basket-qty").innerHTML = json.qty;
+                console.log(json);
             },
             error: function(xhr,errmsg,err){}
         });
-        console.log($('#add-to-basket').val())
+        
     });
     
 </script>

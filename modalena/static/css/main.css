@@ -187,3 +187,16 @@ footer{
     padding:1vh;
     font-size: 3em;
 }
+#basket-qty{
+    background:#fff;
+    color:#000;
+    width:100%;
+    height:100%;
+    font-size: 0.75rem;
+    padding:0;
+    margin:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}

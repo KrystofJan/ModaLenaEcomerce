@@ -14,7 +14,8 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <script src="{% static 'js/main.js'%}"></script>
-    <script src="jquery-3.6.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -32,14 +33,25 @@
             <div class="align-right">
                 <a href=""><span class="material-symbols-outlined">search</span></a>
                 <a href=""><span class="material-symbols-outlined">person</span></a>
-                <a href="{% url 'kosik:kosik_shrnuti'%}"><span
-                        class="material-symbols-outlined">shopping_cart</span></a>
+                <a href="{% url 'kosik:kosik_shrnuti'%}">
+                    
+                    {% with total_qty=kosik|length %}
+                    <div id="basket-qty">
+                        {% if total_qty > 0 %}  
+                            {{total_qty}}
+                        {%else%}
+                        {%endif%}
+                    </div>
+                    {% endwith %}
+
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                </a>
             </div>
         </div>
         <div id="hamburger-navbar">
 
             <div class="align-left">
-                <a href="#" class="logo">MódaLena</span></a>
+                <a href="{% url 'store:index'%}" class="logo">MódaLena</span></a>
             </div>
             <div class="align-right">
                 <a class="material-symbols-outlined" onclick="showHiddenMenu()">menu</a>
@@ -48,7 +60,9 @@
                 <div class="align-row">
                     <a href="#"><span class="material-symbols-outlined">search</span></a>
                     <a href="#"><span class="material-symbols-outlined">person</span></a>
-                    <a href="#"><span class="material-symbols-outlined">shopping_cart</span></a>
+                    <a href="#">
+                        <div></div><span class="material-symbols-outlined">shopping_cart</span>
+                    </a>
                 </div>
                 <a href="{% url 'store:index'%}">Home</a>
                 <a href="{% url 'store:vsechny_produkty'%}">Store</a>
