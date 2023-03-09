@@ -6,7 +6,7 @@ from django.http import JsonResponse
 # Create your views here.
 def kosik_shrnuti(request):
     kosik = Kosik(request)
-    return render(request,'aplikace/kosik/summary.html')
+    return render(request,'aplikace/kosik/summary.html',{'kosik':kosik})
 
 def kosik_pridat(request):
     kosik = Kosik(request)

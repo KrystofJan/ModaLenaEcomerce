@@ -1,11 +1,39 @@
 {% extends "aplikace/base.html" %}
 {% load static %}
 {% block styles %}
-    
+<link rel="stylesheet" href="{% static 'css/basket.css' %}">
 {% endblock %}
 
 {% block title %}Košík Shrnutí{% endblock %}
 {%block content%}
-
-    
+<div class="summary">
+    <H1 class="HeadLine">Košík</H1>
+    <div class="produkty">
+        {%for item in kosik%}
+        {% with product=item.product%}
+        <div class="cele">
+            <div class="prod">
+            <div class="img"><img src="{{product.obrazek.url}}" alt="obr"></div>
+            <div class="prod-info">
+                <div class="nazev">{{product.nazev_produktu}}</div>
+                <div class="barva">{{product.barva}}</div>
+                <div class="velikost">{{product.velikost}}</div>
+        </div>
+            
+        </div>
+        <div class="moznosti">
+            <div class="qty">
+                <label for="quantity">Počet Kusů:</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="{{item.pocet_kusu}}" value="{{item.pocet}}">
+            </div>
+            <button id="odebrat">X</button>
+        </div>
+    </div>
+                
+        {%endwith%}
+        {% endfor %}
+        
+        <div class="total-price">Celkova cena: {{kosik.count_total_price}}</div>
+    </div>
+</div>
 {%endblock%}

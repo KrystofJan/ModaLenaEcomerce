@@ -9,7 +9,7 @@ def index(request):
     return render(request,'aplikace\index.html')
 
 def all_product(request):
-    produkt = Produkt.objects.all()
+    produkt = Produkt.products.all()
 
     return render(request,'aplikace\store.html',{'produkty': produkt})
 

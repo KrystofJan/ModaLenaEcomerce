@@ -247,6 +247,10 @@ class Platba(models.Model):
     def __str__(self) -> str:
         return self.typ_platby
 
+class ProductManager(models.Manager):
+     def get_queryset(self):
+        return super(ProductManager, self).get_queryset().filter(is_active=True)
+
 class Produkt(models.Model):
     produkt_id = models.AutoField(primary_key=True)
     nazev_produktu = models.CharField(max_length=64)
@@ -258,6 +262,8 @@ class Produkt(models.Model):
     cena = models.FloatField()
     pocet_kusu = models.IntegerField()
     kategorie = models.ForeignKey(Kategorie, models.DO_NOTHING)
+    is_active = models.BooleanField(default=True)
+    products = ProductManager()
 
     class Meta:
         managed = False

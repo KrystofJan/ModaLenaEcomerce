@@ -1,0 +1,29 @@
+.produkty{
+    background: #A5A5A5;
+    color: #000;
+    display : flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    padding: 1REM;
+}
+.cele{
+    background:#fff;
+    display : flex;
+    flex:1;
+    flex-direction: row;
+    justify-content:space-between;
+    width:95%;
+    padding:1rem;
+    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
+    border-radius: 1rem;
+}
+.prod{
+    display:flex;
+    flex-direction: row;
+}
+.prod-info{
+    display:flex;
+    flex-direction: column;
+}
